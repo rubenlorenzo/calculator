@@ -1,0 +1,22 @@
+input{
+    padding: 2em 7.05em 2em 2em;
+    margin: 0.5em;
+    border-radius: 0.5em;
+    font-size: 1.10em;
+    font-weight: bold;
+    border: none;
+    background-color: #ecd2af;
+    color:#4a75b9;
+}
+
+button{
+    width: 1em;
+    padding: 2em 3em 2em 2em;
+    margin: 0.5em;
+    font-weight: bold;
+    background-color: #6294E6;
+    border-radius: 0.5em;
+    font-size: 1.05em;
+    border: none;
+    color: white;
+}

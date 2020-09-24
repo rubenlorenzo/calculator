@@ -42,6 +42,8 @@ function clickOperator(op){
         }
     }else if(op=='='){
         screen.value=evil(screen.value);
+    }else if(op=='c'){
+        screen.value=0;
     }
     
 }

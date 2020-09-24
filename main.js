@@ -8,5 +8,14 @@ function addScreen(btnContent){
 }
 
 function clickOperator(op){
-    addScreen(op);
+    let screen=document.getElementById("screen");
+    
+    if(op=='+' || op=='-' || op=='*' || op=='/'){
+        if(!isNaN(screen.value)){
+            addScreen(op);
+        }else{
+            screen.value=0;
+        }
+    }
+    
 }

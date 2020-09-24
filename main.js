@@ -10,14 +10,16 @@ function evil(fn) {
 function count_point(text){
     let c_point=0;
 
-    for(var i=0; i < text.value.length; i++){
-        if(text.value[i]=="."){
+    for(var i=0; i < text.length; i++){
+        if(text[i]=="."){
             c_point++;
         }
-        if(c_point>1){
-            text.value=0;
-        } 
+        if(text[i]=='+' || text[i]=='-' || text[i]=='*' || text[i]=='/'){
+            c_point=0;
+        }     
     }
+
+    return c_point;
 }
 
 function clickNumber(num){    
@@ -26,8 +28,9 @@ function clickNumber(num){
     }else{
         addScreen(num);
         let screen=document.getElementById("screen");
-        count_point(screen.value);
-        
+        if(count_point(screen.value)>1){
+            screen.value="";
+        }
     }   
 }
 
@@ -38,12 +41,12 @@ function clickOperator(op){
         if(!isNaN(screen.value)){
             addScreen(op);
         }else{
-            screen.value=0;
+            screen.value="";
         }
     }else if(op=='='){
         screen.value=evil(screen.value);
     }else if(op=='c'){
-        screen.value=0;
+        screen.value="";
     }
     
 }

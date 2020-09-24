@@ -7,9 +7,28 @@ function evil(fn) {
     return new Function('return ' + fn)();
 }
 
+function count_point(text){
+    let c_point=0;
 
-function clickNumber(num){
-    addScreen(num);
+    for(var i=0; i < text.value.length; i++){
+        if(text.value[i]=="."){
+            c_point++;
+        }
+        if(c_point>1){
+            text.value=0;
+        } 
+    }
+}
+
+function clickNumber(num){    
+    if(num!="."){
+        addScreen(num);
+    }else{
+        addScreen(num);
+        let screen=document.getElementById("screen");
+        count_point(screen.value);
+        
+    }   
 }
 
 function clickOperator(op){
